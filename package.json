@@ -1,0 +1,26 @@
+{
+  "name": "surfing_forever",
+  "version": "0.0.9",
+  "description": "for surfing",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "idx": "^2.5.6",
+    "net": "^1.0.2",
+    "next": "^9.5.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "devDependencies": {
+    "@types/node": "^14.6.1",
+    "@types/react": "^16.9.48",
+    "@types/react-dom": "^16.9.8",
+    "typescript": "^4.0.2"
+  }
+}
