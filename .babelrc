@@ -1,0 +1,36 @@
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "styled-jsx": {
+          "plugins": ["styled-jsx-plugin-sass"]
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "components": "./src/components",
+          "containers": "./src/containers",
+          "pages": "./src/pages",
+          "hooks": "./src/hooks",
+          "server": "./src/server",
+          "constant": "./src/constant",
+          "public": "./src/public",
+          "styles": "./src/styles",
+          "utils": "./src/utils"
+        }
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "plugins": ["transform-dynamic-import"]
+    }
+  }
+}
