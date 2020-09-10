@@ -8,9 +8,9 @@
     "node": ">=12.14.1"
   },
   "scripts": {
-    "start": "LOGGER_LEVEL=info node src/server/server",
+    "dev": "node src/server/server",
     "build": "next build src",
-    "start:prod": "NODE_ENV=production node src/server/server",
+    "start": "NODE_ENV=production node src/server/server",
     "analyze": "ANALYZE=true yarn build",
     "lint-staged": "lint-staged",
     "lint-pass": "echo '\\033[4;32m♡' Awsome!!! you are great to commit ♡' \\033[0m'",
