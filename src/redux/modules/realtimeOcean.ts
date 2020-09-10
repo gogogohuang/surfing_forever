@@ -26,6 +26,7 @@ type TState = {
   hasError: boolean;
 };
 
+const dataElementName = ['週期', '海溫', '浪高', '波向'];
 
 export const initialState: TState = {
   data: null,
@@ -46,9 +47,6 @@ export default function reducer(state = initialState, action) {
     case ActionTypes.FETCHED_SUCCESS: {
       const { result } = action;
       const { locationName, time } = result?.location[0];
-
-      console.log(time);
-
       const _data = {
         locationName,
         data: time,

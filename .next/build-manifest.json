@@ -14,6 +14,11 @@
     "static/development/_ssgManifest.js"
   ],
   "pages": {
+    "/IndexPage": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/IndexPage.js"
+    ],
     "/OceanPage": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",

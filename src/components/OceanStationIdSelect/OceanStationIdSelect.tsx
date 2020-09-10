@@ -19,12 +19,12 @@ export default ({ data, fetch }: Props) => {
 
   useEffect(() => {
     if (sId) {
-      fetch(sId, );
+      fetch(sId,);
     }
   }, [sId]);
 
   const renderSwell = useMemo(() => (
-    data && <Swell data={data} />
+    <Swell data={data} />
   ), [data]);
 
   return (<>

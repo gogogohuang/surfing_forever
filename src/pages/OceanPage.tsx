@@ -1,10 +1,10 @@
 import React from 'react';
 import OceanStationIdSelect from 'components/OceanStationIdSelect/OceanStationIdSelectContainer';
 
-const HomePage = () => {
+const OceanPage = () => {
   return <div>
     <OceanStationIdSelect />
   </div>
 }
 
-export default HomePage
+export default OceanPage
