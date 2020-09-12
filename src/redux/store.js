@@ -1,5 +1,5 @@
 import { createStore, compose, applyMiddleware } from 'redux';
-import createClientMiddleware from './middleware';
+import createClientMiddleware from './middleWare';
 import rootReducer from './reducer';
 
 const makeStore = (initialState) => {
