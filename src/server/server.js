@@ -1,6 +1,5 @@
 const next = require('next');
 const path = require('path');
-const fs = require('fs');
 const express = require('express');
 const compression = require('compression');
 const helmet = require('helmet');
@@ -51,10 +50,9 @@ app.prepare().then(() => {
     server.get('/_next/-/app.js', (req, res) => app.serveStatic(req, res, path.resolve('./.next/app.js')));
   }
 
-
   // add cache control for static file
   // https://github.com/zeit/next.js/issues/1791
-  server.use('/public', express.static('src/public', isProd));
+  // server.use('/public', express.static('src/public', isProd));
 
   server.use(helmet());
   server.use(routerHandler);
