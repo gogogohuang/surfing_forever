@@ -1,1 +1,0 @@
-{"ast":null,"code":"\"use strict\";\n\nexports.__esModule = true;\n\nvar react_1 = require(\"react\");\n\nvar HomePage = function () {\n  return react_1[\"default\"].createElement(\"div\", null, \"Welcome to Next.js!\");\n};\n\nexports[\"default\"] = HomePage;","map":null,"metadata":{},"sourceType":"script"}
