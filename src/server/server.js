@@ -1,10 +1,12 @@
-const next = require("next");
-const express = require("express");
-const compression = require("compression");
-const router = require("../routes");
-const port = 3000;
-const isDev = process.env.NODE_ENV !== "production";
-const app = next({ dir: "./src", dev: isDev });
+const next = require('next');
+const express = require('express');
+const compression = require('compression');
+const router = require('../routes');
+
+const isDev = process.env.NODE_ENV !== 'production';
+const port = parseInt(process.env.PORT, 10) || 3000;
+const app = next({ dir: './src', dev: isDev });
+
 const routerHandler = router.getRequestHandler(app);
 
 app.prepare().then(() => {
