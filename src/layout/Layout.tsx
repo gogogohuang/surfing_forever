@@ -1,20 +1,13 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styles from './Layout.style';
-import App from 'components/App/App';
 
-type Props = {
-  children: React.ReactChild;
-}
-
-export default ({ children }: Props) => {
+const Layout: FC = ({ children }) => {
   return (
-    <App>
-      <>
-        <div className="container">
-          <main>{children}</main>
-        </div>
-        <style jsx>{styles}</style>
-      </>
-    </App>
+    <div className="container">
+      <main>{children}</main>
+      <style jsx>{styles}</style>
+    </div>
   );
-}
+};
+
+export default Layout;

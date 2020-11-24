@@ -17,16 +17,14 @@
     "paths": {
       "root/*": ["src/*"],
       "components/*": ["src/components/*"],
-      "containers/*": ["src/containers/*"],
       "pages/*": ["src/pages/*"],
       "hooks/*": ["src/hooks/*"],
       "server/*": ["src/server/*"],
-      "constant/*": ["src/constant/*"],
-      "public/*": ["src/public/*"],
       "styles/*": ["src/styles/*"],
-      "utils/*": ["src/utils/*"]
+      "utils/*": ["src/utils/*"],
+      "context/*": ["src/context/*"]
     }
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "server/server.js", "styles/reset.style.ts", "redux/store.js"]
 }
