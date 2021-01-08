@@ -1,11 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-const App = () => {
-  return (
-    <>
-      <div />
-    </>
-  );
+const App: FC = ({ children }) => {
+  return <>{children}</>;
 };
 
 export default App;
