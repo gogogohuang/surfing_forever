@@ -1,24 +1,13 @@
 /** screen */
-export const ScreenMobile = 375;
+export const screenMobile = 375;
 export const screenPad = 768;
 
 /** font */
-export const displayPanelFontSize = 72;
-export const buttonFontSize = 30;
-export const displayPanelFontColor = '#fff';
-export const numberFontColor = '#fff';
-export const buttonFontColor = '#000';
+export const numberFontColor = '#7e7e7e';
+export const waveSizeFontSize = 36;
+export const numberFontSize = 20;
 
 /** color */
 export const backgroundColor = '#DDD';
-export const panelBackgroundColorTop = '#84BAFF';
-export const panelBackgroundColorBottom = '#0B0E1C';
-export const numberButtonColor = '#333333';
-export const computeButtonColor = '#3091FD';
-export const computeButtonColor2 = '#AFAFAF';
-
-/** style constant */
-export const calculatorWidthL = 480;
-export const calculatorWidthM = 360;
-export const buttonSizeL = (calculatorWidthL - 50) / 4;
-export const buttonSizeM = (calculatorWidthM - 50) / 4;
+export const airColor = '#84BAFF';
+export const seaColor = '#3091FD';

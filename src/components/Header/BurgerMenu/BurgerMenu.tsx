@@ -1,21 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { HeaderContext } from '../Header';
 import cx from 'classnames';
 import styles from './BurgerMenu.style';
 
-type BurgerMenuProps = {
-  onClickCb: () => void;
-  status: boolean;
-}
+const BurgerMenu = () => {
+  const { menuIsOpen, toggleMenu } = useContext(HeaderContext);
 
-const BurgerMenu = ({ onClickCb, status }: BurgerMenuProps) => {
   return (
-    <div className='container' onClick={onClickCb}>
-      <div className={cx('bar', { change1: status })} />
-      <div className={cx('bar', { change2: status })} />
-      <div className={cx('bar', { change3: status })} />
+    <div className="container" onClick={toggleMenu}>
+      <div className={cx('bar', { change1: menuIsOpen })} />
+      <div className={cx('bar', { change2: menuIsOpen })} />
+      <div className={cx('bar', { change3: menuIsOpen })} />
       <style jsx>{styles}</style>
     </div>
   );
-}
+};
 
-export default React.memo(BurgerMenu, (prev, next) => (prev.status === next.status));
+export default React.memo(BurgerMenu);
