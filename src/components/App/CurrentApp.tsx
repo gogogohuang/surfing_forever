@@ -1,10 +1,10 @@
 import React from 'react';
-import CurrentWave from 'components/CurrentWave/CurrentWave';
+import CurrentData from 'components/CurrentData/CurrentData';
 
 const CurrentApp = () => {
   return (
     <>
-      <CurrentWave />
+      <CurrentData />
     </>
   );
 };

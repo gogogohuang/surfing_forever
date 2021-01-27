@@ -4,26 +4,35 @@ import idx from 'idx';
 const apiKey = 'CWB-27A80F1A-A586-4FDC-BE8A-641BF50848FA';
 const apiUrl = 'https://opendata.cwb.gov.tw/api/v1/rest/datastore';
 
-const getSeaData = stationId =>
+const getSeaData = (stationId: string): Promise<void | { data: any[] }> =>
   axios
-    .get(`${apiUrl}/O-A0018-001`, {
+    .get(`${apiUrl}/O-B0075-001`, {
       params: {
         Authorization: apiKey,
         limit: 10,
         sort: 'obsTime',
         stationId,
-        elementName: '風向,平均風,週期,陣風,海溫,浪高,波向',
+        weatherElement: [
+          'tideHeight',
+          'tideLevel',
+          'waveHeight',
+          'waveDirection',
+          'waveDirectionDescription',
+          'wavePeriod',
+          'seaTemperature',
+          'temperature',
+        ],
       },
     })
     .then(res => {
       const success = idx(res, _ => _.data.success);
-      const records = idx(res, _ => _.data.records);
+      const weatherData = idx(res, _ => _.data.records.seaSurfaceObs.location[0].stationObsTimes.stationObsTime);
 
       if (success === 'true') {
-        return records || {};
+        return { data: weatherData || [] };
       }
 
-      return {};
+      return { data: [] };
     })
     .catch(e => console.log(e));
 

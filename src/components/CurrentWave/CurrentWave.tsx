@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './CurrentWave.style';
 
 type Props = {
+  isLoading: boolean;
   waveSize: string;
   airTemp: string;
   seaTemp: string;
