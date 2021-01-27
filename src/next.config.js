@@ -13,7 +13,7 @@ module.exports = {
     };
 
     // apply new aliases
-    const aliases = ['components', 'pages', 'hooks', 'server', 'styles', 'utils', 'layout', 'store'];
+    const aliases = ['components', 'pages', 'hooks', 'server', 'styles', 'utils', 'layout', 'constant'];
     Object.assign(
       config.resolve.alias,
       aliases.reduce(
