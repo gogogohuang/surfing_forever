@@ -1,4 +1,5 @@
 import React from 'react';
+import LoadingSkeleton from 'components/LoadingSkeleton/LoadingSkeleton';
 import styles from './CurrentWave.style';
 
 type Props = {
@@ -8,12 +9,17 @@ type Props = {
   seaTemp: string;
 };
 
-const CurrentWave = () => {
+const CurrentWave = ({ isLoading, waveSize, seaTemp, airTemp }: Props) => {
   return (
     <div className="current-wave">
-      <div className="current-wave__size">5m</div>
-      <div className="current-wave__air-temp">20</div>
-      <div className="current-wave__sea-temp">16</div>
+      {isLoading && <LoadingSkeleton />}
+      {!isLoading && (
+        <>
+          <div className="current-wave__size">{waveSize || '--'}</div>
+          <div className="current-wave__air-temp">{airTemp || '--'}</div>
+          <div className="current-wave__sea-temp">{seaTemp || '--'}</div>
+        </>
+      )}
       <style jsx>{styles}</style>
     </div>
   );

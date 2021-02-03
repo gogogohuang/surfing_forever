@@ -1,8 +1,9 @@
 import React, { useEffect, useState, memo } from 'react';
+import idx from 'idx';
 import Select from 'react-select';
 import { Name, ID } from 'utils/location';
 import api from 'utils/api';
-import { getHourMinuteFromTimestamp } from 'utils/timeHelper';
+import { timeDisplayFactory } from 'utils/timeHelper';
 import styles from './LocationSelector.style';
 
 type Props = {
@@ -26,29 +27,31 @@ const LocationSelector = ({ updateData }: Props): JSX.Element => {
 
   const genCurrentData = (rawData): Weather.CurrentDataType[] => {
     const result = rawData.map(raw => {
-      console.log(raw.dataTime);
       const unixTimeZero = Date.parse(raw.dataTime);
+      const waveHeight = idx(raw, _ => _.weatherElements.waveHeight);
+      const seaTemperature = idx(raw, _ => _.weatherElements.seaTemperature);
+      const temperature = idx(raw, _ => _.weatherElements.temperature);
 
-      console.log(getHourMinuteFromTimestamp(unixTimeZero));
-
-      // return {
-      //   time: date.
-      // }
+      return {
+        time: timeDisplayFactory(unixTimeZero),
+        waveHeight,
+        seaTemperature,
+        temperature,
+      };
     });
 
-    return [];
+    return result;
   };
 
   useEffect(() => {
     const getData = async () => {
+      updateData({ isLoading: true, currentData: [] });
       const data = await api.getSeaData(locationId);
 
       if (data && data.data && data.data.length > 0) {
-        // convert data to fit CurrentDataType
-        genCurrentData(data.data);
-
-        console.log(data.data);
-        // updateData(data.data);
+        // convert data to CurrentDataType
+        const formattedData = genCurrentData(data.data);
+        updateData({ isLoading: false, currentData: formattedData });
       }
     };
 
