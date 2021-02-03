@@ -9,19 +9,10 @@ const getSeaData = (stationId: string): Promise<void | { data: any[] }> =>
     .get(`${apiUrl}/O-B0075-001`, {
       params: {
         Authorization: apiKey,
-        limit: 10,
-        sort: 'obsTime',
+        sort: 'dataTime',
         stationId,
-        weatherElement: [
-          'tideHeight',
-          'tideLevel',
-          'waveHeight',
-          'waveDirection',
-          'waveDirectionDescription',
-          'wavePeriod',
-          'seaTemperature',
-          'temperature',
-        ],
+        weatherElement:
+          'tideHeight,tideLevel,waveHeight,waveDirection,waveDirectionDescription,wavePeriod,seaTemperature,temperature',
       },
     })
     .then(res => {
