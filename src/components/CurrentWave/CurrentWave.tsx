@@ -25,4 +25,4 @@ const CurrentWave = ({ isLoading, waveSize, seaTemp, airTemp }: Props) => {
   );
 };
 
-export default CurrentWave;
+export default React.memo(CurrentWave);

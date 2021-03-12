@@ -5,6 +5,7 @@ export default css`
   .location-selector {
     &__container {
       width: 100%;
+      margin-bottom: 25px;
     }
   }
 `;

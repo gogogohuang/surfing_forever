@@ -1,12 +1,12 @@
-export enum Name {
-  'Hualien' = 'Hualien',
-  'Longdong' = 'Longdong',
-  'Guishandao' = 'Guishandao',
-  'Cheng-Kung' = 'Cheng-Kung',
-  'Fugui' = 'Fugui',
-  'Taitung-Wave' = 'Taitung-Wave',
-  'Taitung' = 'Taitung',
-}
+export const Locations = {
+  Hualien: 'Hualien',
+  Longdong: 'Longdong',
+  Guishandao: 'Guishandao',
+  ChengKung: 'Cheng-Kung',
+  Fugui: 'Fugui',
+  TaitungWave: 'Taitung-Wave',
+  Taitung: 'Taitung',
+};
 
 export enum ID {
   'Hualien' = '46699A',

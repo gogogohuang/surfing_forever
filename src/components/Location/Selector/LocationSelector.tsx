@@ -1,7 +1,7 @@
-import React, { useEffect, useState, memo } from 'react';
+import React, { useEffect, useState, memo, useMemo } from 'react';
 import idx from 'idx';
 import Select from 'react-select';
-import { Name, ID } from 'utils/location';
+import { Locations, ID } from 'utils/location';
 import api from 'utils/api';
 import { timeDisplayFactory } from 'utils/timeHelper';
 import styles from './LocationSelector.style';
@@ -13,11 +13,10 @@ type Props = {
 const LocationSelector = ({ updateData }: Props): JSX.Element => {
   const [locationId, setLocationId] = useState<string>('');
 
-  const options = [
-    { value: ID['Taitung-Wave'], label: Name['Taitung-Wave'] },
-    { value: ID['Taitung'], label: Name['Taitung'] },
-    { value: ID['Cheng-Kung'], label: Name['Cheng-Kung'] },
-  ];
+  const optionGenerator = useMemo(
+    () => Object.keys(Locations).map(key => ({ value: ID[Locations[key]], label: Locations[key] })),
+    []
+  );
 
   const handleOnChange = e => {
     if (e && e.value) {
@@ -65,7 +64,7 @@ const LocationSelector = ({ updateData }: Props): JSX.Element => {
       <Select
         inputId="location-selector-input"
         id="location-selector"
-        options={options}
+        options={optionGenerator}
         onChange={handleOnChange}
         isClearable
       />
