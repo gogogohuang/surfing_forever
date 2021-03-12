@@ -1,17 +1,17 @@
 import React from 'react';
 import Head from 'next/head';
-import App from 'components/App/App';
+import ForecastApp from 'components/App/ForecastApp';
 
-const Index = () => {
+const ForecastPage = () => {
   return (
     <>
       <Head>
-        <title>Surfing Forever</title>
+        <title>Surfing Forever - forecast</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no maximum-scale=1" />
       </Head>
-      <App />
+      <ForecastApp />
     </>
   );
 };
 
-export default Index;
+export default ForecastPage;

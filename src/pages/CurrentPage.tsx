@@ -1,17 +1,17 @@
 import React from 'react';
 import Head from 'next/head';
-import App from 'components/App/App';
+import CurrentApp from 'components/App/CurrentApp';
 
-const Index = () => {
+const CurrentPage = () => {
   return (
     <>
       <Head>
-        <title>Surfing Forever</title>
+        <title>Surfing Forever - Current</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no maximum-scale=1" />
       </Head>
-      <App />
+      <CurrentApp />
     </>
   );
 };
 
-export default Index;
+export default CurrentPage;
